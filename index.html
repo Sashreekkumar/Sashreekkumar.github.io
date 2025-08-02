@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Lora -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Use the Lora font family */
+        body {
+            font-family: 'Lora', serif;
+        }
+        /* Custom class for a subtle background pattern */
+        .bg-pattern {
+            background-color: #f8fafc; /* gray-50 */
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-white/80 backdrop-blur-md w-full z-50 pt-4 sticky top-0">
+        <!-- The container div is constrained on large screens -->
+        <div class="w-full lg:w-[55%] mx-auto px-6">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+                <a href="#home" class="text-[24px] text-slate-900">Sashreek Kumar</a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-slate-600 hover:text-[#387ed1] transition duration-100 text-[18px]">About</a>
+                    <a href="pages\blog.html" class="text-slate-600 hover:text-[#387ed1] transition duration-100 text-[18px]">Blog</a>
+                    <a href="pages/paper_implementations.html" class="text-slate-600 hover:text-[#387ed1] transition duration-100 text-[18px]">Paper Implementations</a>
+                    <a href="pages/projects.html" class="text-slate-600 hover:text-[#387ed1] transition duration-100 text-[16px]">Projects</a>
+                </nav>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-slate-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+             <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 bg-white rounded-lg shadow-md">
+                <a href="#" class="block py-2 px-4 text-sm text-slate-600 hover:bg-slate-100 rounded-t-lg">About</a>
+                <a href="#" class="block py-2 px-4 text-sm text-slate-600 hover:bg-slate-100">Blog</a>
+                <a href="#" class="block py-2 px-4 text-sm text-slate-600 hover:bg-slate-100">Paper Implementations</a>
+                <a href="#" class="block py-2 px-4 text-sm text-slate-600 hover:bg-slate-100 rounded-b-lg">Projects</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page container with Grid layout for large screens -->
+    <div class="lg:grid lg:grid-cols-[22.5%_55%_22.5%]">
+        <!-- Left Gutter / PFP Column -->
+        <aside class="hidden lg:flex justify-end py-16 pr-12">
+             <div class="sticky top-24 flex flex-col items-center w-48">
+                <img src="https://placehold.co/400x400/6366f1/ffffff?text=SK" alt="Sashreek Kumar" class="w-48 h-48 rounded-full shadow-xl object-cover">
+                <!-- Social Media Icons -->
+                <div class="flex space-x-6 mt-6">
+                    <!-- X (Twitter) Icon -->
+                    <a href="#" aria-label="X social media link" class="text-slate-500 hover:text-[#387ed1] transition duration-100">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+                    </a>
+                    <!-- LinkedIn Icon -->
+                    <a href="#" aria-label="LinkedIn social media link" class="text-slate-500 hover:text-[#387ed1] transition duration-100">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+                    </a>
+                    <!-- GitHub Icon -->
+                    <a href="#" aria-label="GitHub social media link" class="text-slate-500 hover:text-[#387ed1] transition duration-100">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.65.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+            <!-- About Section -->
+            <section id="about" class="bg-pattern pt-16 md:pt-16 pb-4">
+                <div class="px-6">
+                     <!-- Mobile Only Profile Picture -->
+                    <div class="lg:hidden flex flex-col items-center mb-12">
+                         <img src="https://placehold.co/400x400/6366f1/ffffff?text=SK" alt="Sashreek Kumar" class="w-48 h-48 md:w-56 md:h-56 rounded-full shadow-xl object-cover">
+                         <div class="flex space-x-6 mt-6">
+                            <a href="#" aria-label="X social media link" class="text-slate-500 hover:text-[#387ed1] transition duration-100"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+                            <a href="#" aria-label="LinkedIn social media link" class="text-slate-500 hover:text-[#387ed1] transition duration-100"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg></a>
+                            <a href="#" aria-label="GitHub social media link" class="text-slate-500 hover:text-[#387ed1] transition duration-100"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.65.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg></a>
+                        </div>
+                    </div>
+                    <div class="text-slate-700 text-base leading-relaxed">
+                        <h2 class="text-2xl text-slate-900 mb-6">About</h2>
+                        <p class="mb-6">
+                            I'm Chip Huyen, a writer and computer scientist. I grew up chasing grasshoppers in a small rice-farming village in Vietnam.
+                        </p>
+                        <p class="mb-6">
+                            My focus is on ML/AI systems in production. I'm currently exploring creative use cases of AI in education and entertainment.
+                        </p>
+                        <p class="mb-6">
+                            Previously, I worked on ML tooling at NVIDIA (core dev of <a href="#" class="text-indigo-600 hover:text-[#387ed1] hover:underline transition duration-100">NeMo</a>), Snorkel AI, and Netflix. I also founded and sold an AI infra startup.
+                        </p>
+                        <p class="mb-6">
+                           Running a startup taught me that being a founder is incredibly hard, so I try to support founders in any way I can. Some startups I've worked with included <a href="#" class="text-indigo-600 hover:text-[#387ed1] hover:underline transition duration-100">Convai</a>, <a href="#" class="text-indigo-600 hover:text-[#387ed1] hover:underline transition duration-100">OctoAI</a>, and <a href="#" class="text-indigo-600 hover:text-[#387ed1] hover:underline transition duration-100">Photoroom</a>.
+                        </p>
+                         <p class="mb-6">
+                            I graduated from Stanford, where I taught <a href="#" class="text-indigo-600 hover:text-[#387ed1] hover:underline transition duration-100">ML Systems</a>. The lectures became the foundation for the book <a href="#" class="text-indigo-600 hover:text-[#387ed1] hover:underline transition duration-100">Designing Machine Learning Systems</a>, which is an Amazon #1 bestseller in AI and has been translated into 10+ languages (very proud)!
+                        </p>
+                    </div>
+                </div>
+            </section>
+    
+            <!-- Experience Section -->
+            <!-- <section id="experience" class="bg-white py-4">
+                <div class="px-6 text-base text-slate-700 leading-relaxed">
+                    <h2 class="text-2xl  text-slate-900 mb-8">Experience</h2> -->
+                    <!-- Experience Item 1 -->
+                    <!-- <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-slate-800">Senior Developer - Tech Corp</h3>
+                        <p class="text-slate-500 text-sm">2020 - Present</p>
+                        <p class="mt-2">Lead developer on a team responsible for building and maintaining scalable web applications. Focused on front-end architecture and performance optimization.</p>
+                    </div> -->
+                    <!-- Experience Item 2 -->
+                    <!-- <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-slate-800">Web Developer - Innovate LLC</h3>
+                        <p class="text-slate-500 text-sm">2018 - 2020</p>
+                        <p class="mt-2">Developed user-facing features for a variety of client websites using modern JavaScript frameworks.</p>
+                    </div>
+                </div>
+            </section> -->
+    
+            <!-- Publications Section -->
+            <!-- <section id="publications" class="bg-pattern py-4">
+                <div class="px-6 text-base text-slate-700 leading-relaxed">
+                    <h2 class="text-2xl text-slate-900 mb-8">Publications</h2> -->
+                    <!-- Publication Item 1 -->
+                    <!-- <div class="mb-6">
+                        <a href="#" class="text-xl font-semibold text-indigo-600 hover:text-[#387ed1] hover:underline transition duration-100">The Art of Responsive Design</a>
+                        <p class="mt-1">Published in Web Dev Weekly, this article explores modern CSS techniques for creating fluid, responsive layouts.</p>
+                    </div> -->
+                    <!-- Publication Item 2 -->
+                    <!-- <div class="mb-6">
+                        <a href="#" class="text-xl font-semibold text-indigo-600 hover:text-[#387ed1] hover:underline transition duration-100">JavaScript Performance Deep Dive</a>
+                        <p class="mt-1">A comprehensive guide on optimizing JavaScript for faster web applications, featured on CSS-Tricks.</p> -->
+                    <!-- </div>
+                </div> -->
+            </section>
+        </main>
+        <!-- Right Gutter (empty) -->
+        <div class="hidden lg:block"></div>
+    </div>
+
+
+    <script>
+        // JavaScript for the mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', (e) => {
+            e.stopPropagation(); // prevent the document click from firing immediately
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Close mobile menu when clicking outside of it
+        document.addEventListener('click', (event) => {
+            const isClickInsideMenu = mobileMenu.contains(event.target);
+            const isClickOnButton = mobileMenuButton.contains(event.target);
+            if (!isClickInsideMenu && !isClickOnButton) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+
+</body>
+</html>

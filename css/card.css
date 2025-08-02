@@ -1,0 +1,60 @@
+.wrapper {
+  padding-top: 2.1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  width: 250px;
+  max-width: 100%;
+  box-shadow: 0 4px 8px rgba(169, 169, 169, 1);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: white;
+  position: relative;
+  margin: 0.8rem;
+}
+
+/* .bannerImg {
+    height: 10rem; 
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+} */
+
+.cardbody {
+  margin: 0.8rem;
+}
+
+.blogTitle {
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0.4rem;
+}
+
+.blogDesc {
+  color: var(--clr-gray-med);
+  font-size: 0.9rem;
+}
+
+.blogDate {
+  color: var(--clr-gray-med);
+  margin: 0.5rem 0 0 0;
+  font-size: 0.7rem;
+}
+
+.cardlink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
