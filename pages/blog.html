@@ -22,6 +22,46 @@
         .bg-pattern {
             background-color: #f8fafc; /* gray-50 */
         }
+        
+        /* Smooth transitions for content sections */
+        .content-section {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            display: none;
+        }
+        
+        .content-section.active {
+            opacity: 1;
+            transform: translateY(0);
+            display: block;
+        }
+        
+        /* Active tab styling */
+        .tab-btn {
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 6px 16px;
+            border-radius: 20px;
+            background-color: transparent;
+            border: 1px solid transparent;
+        }
+        
+        @media (min-width: 768px) {
+            .tab-btn {
+                padding: 8px 20px;
+            }
+        }
+        
+        .tab-btn.active {
+            color: #387ed1;
+            background-color: #eff6ff;
+            border-color: #bfdbfe;
+        }
+        
+        .tab-btn:hover:not(.active) {
+            background-color: #f8fafc;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
@@ -54,35 +94,70 @@
     </header>
 
     <!-- Main Content -->
-     <main class="w-full lg:w-[55%] mx-auto">
-        <!-- About Section -->
-         <section id="about" class="bg-pattern pt-16 md:pt-16 pb-4">
-                <div class="px-6">
-            
-                    <div class="text-slate-700 text-base leading-relaxed">
-                         <h2 class="text-xl text-slate-900 mb-1">Blogs</h2>
-                          <p>1. COMING SOON</p>
-                         <p class="mb-6">1. COMING SOON</p>
-                        
-                         <h2 class="text-xl text-slate-900 mb-1">Mini Blogs</h2>
-                         <p>1. COMING SOON</p>
-                         <p>1. COMING SOON</p>
+    <main class="w-full lg:w-[55%] mx-auto">
+        <!-- Sub-navigation Tabs -->
+        <section class="bg-white border-b border-slate-200">
+            <div class="px-6 pt-8 pb-4">
+                <div class="flex justify-center space-x-3 md:space-x-4 overflow-x-auto">
+                    <button class="tab-btn active text-sm md:text-base pb-2 whitespace-nowrap" data-tab="technical">
+                        Technical
+                    </button>
+                    <button class="tab-btn text-sm md:text-base pb-2 whitespace-nowrap text-slate-600" data-tab="reading">
+                        Reading
+                    </button>
+                    <button class="tab-btn text-sm md:text-base pb-2 whitespace-nowrap text-slate-600" data-tab="non-technical">
+                        Non-Tech
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Sections -->
+        <section class="bg-pattern pt-12 pb-16">
+            <div class="px-6">
+                <!-- Technical Section -->
+                <div id="technical" class="content-section active">
+                    <h2 class="text-2xl text-slate-900 mb-4">Technical</h2>
+                    <div class="text-slate-700 text-base leading-relaxed space-y-2">
+                        <p>1. COMING SOON</p>
+                        <p>2. COMING SOON</p>
+                        <p>3. COMING SOON</p>
                     </div>
                 </div>
-            </section>
+
+                <!-- Reading Section -->
+                <div id="reading" class="content-section">
+                    <h2 class="text-2xl text-slate-900 mb-4">Reading</h2>
+                    <div class="text-slate-700 text-base leading-relaxed space-y-2">
+                        <p>1. COMING SOON</p>
+                        <p>2. COMING SOON</p>
+                        <p>3. COMING SOON</p>
+                    </div>
+                </div>
+
+                <!-- Non-Tech Section -->
+                <div id="non-technical" class="content-section">
+                    <h2 class="text-2xl text-slate-900 mb-4">Non-Tech</h2>
+                    <div class="text-slate-700 text-base leading-relaxed space-y-2">
+                        <p>1. COMING SOON</p>
+                        <p>2. COMING SOON</p>
+                        <p>3. COMING SOON</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <script>
-        // JavaScript for the mobile menu toggle
+        // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
         mobileMenuButton.addEventListener('click', (e) => {
-            e.stopPropagation(); // prevent the document click from firing immediately
+            e.stopPropagation();
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Close mobile menu when a link is clicked
         const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
         mobileNavLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -90,13 +165,42 @@
             });
         });
         
-        // Close mobile menu when clicking outside of it
         document.addEventListener('click', (event) => {
             const isClickInsideMenu = mobileMenu.contains(event.target);
             const isClickOnButton = mobileMenuButton.contains(event.target);
             if (!isClickInsideMenu && !isClickOnButton) {
                 mobileMenu.classList.add('hidden');
             }
+        });
+
+        // Tab switching functionality
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const contentSections = document.querySelectorAll('.content-section');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetTab = button.getAttribute('data-tab');
+                
+                // Remove active class from all buttons
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.classList.add('text-slate-600');
+                });
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                button.classList.remove('text-slate-600');
+                
+                // Hide all content sections
+                contentSections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Show target content section with a small delay for smooth transition
+                setTimeout(() => {
+                    document.getElementById(targetTab).classList.add('active');
+                }, 50);
+            });
         });
     </script>
 
