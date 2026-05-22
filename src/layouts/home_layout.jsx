@@ -11,7 +11,7 @@ export default function Layout() {
       <main>
         <About/>
         <Experience/>
-        <Publications/>
+        {/* <Publications/> */}
       </main>
 
       <div className="hidden lg:block" />

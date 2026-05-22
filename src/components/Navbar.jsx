@@ -19,9 +19,9 @@ export default function Header() {
             <a href="/blogs" className="text-slate-600 hover:text-[#387ed1] transition duration-100 text-[18px]">
               Blog
             </a>
-            <a href="paper_implementations" className="text-slate-600 hover:text-[#387ed1] transition duration-100 text-[18px]">
+            {/* <a href="paper_implementations" className="text-slate-600 hover:text-[#387ed1] transition duration-100 text-[18px]">
               Paper Implementations
-            </a>
+            </a> */}
             <a href="projects" className="text-slate-600 hover:text-[#387ed1] transition duration-100 text-[18px]">
               Projects
             </a>
@@ -60,9 +60,9 @@ export default function Header() {
           <a href="/blogs" className="block py-2 px-4 text-sm text-slate-600 hover:bg-slate-100">
             Blog
           </a>
-          <a href="/paper_implementations" className="block py-2 px-4 text-sm text-slate-600 hover:bg-slate-100">
+          {/* <a href="/paper_implementations" className="block py-2 px-4 text-sm text-slate-600 hover:bg-slate-100">
             Paper Implementations
-          </a>
+          </a> */}
           <a href="/projects" className="block py-2 px-4 text-sm text-slate-600 hover:bg-slate-100 rounded-b-lg">
             Projects
           </a>
