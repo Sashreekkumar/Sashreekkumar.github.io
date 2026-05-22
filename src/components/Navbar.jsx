@@ -13,16 +13,16 @@ export default function Header() {
           </a>
 
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-slate-600 hover:text-[#387ed1] transition duration-100 text-[18px]">
+            <a href="/" className="text-slate-600 hover:text-[#387ed1] transition duration-100 text-[18px]">
               About
             </a>
-            <a href="pages/blog.html" className="text-slate-600 hover:text-[#387ed1] transition duration-100 text-[18px]">
+            <a href="/blogs" className="text-slate-600 hover:text-[#387ed1] transition duration-100 text-[18px]">
               Blog
             </a>
-            <a href="pages/paper_implementations.html" className="text-slate-600 hover:text-[#387ed1] transition duration-100 text-[18px]">
+            <a href="paper_implementations" className="text-slate-600 hover:text-[#387ed1] transition duration-100 text-[18px]">
               Paper Implementations
             </a>
-            <a href="pages/projects.html" className="text-slate-600 hover:text-[#387ed1] transition duration-100 text-[18px]">
+            <a href="projects" className="text-slate-600 hover:text-[#387ed1] transition duration-100 text-[18px]">
               Projects
             </a>
           </nav>
@@ -54,16 +54,16 @@ export default function Header() {
           id="mobile-menu"
           className={`${open ? "block" : "hidden"} md:hidden mt-4 bg-white rounded-lg shadow-md`}
         >
-          <a href="#" className="block py-2 px-4 text-sm text-slate-600 hover:bg-slate-100 rounded-t-lg">
+          <a href="/" className="block py-2 px-4 text-sm text-slate-600 hover:bg-slate-100 rounded-t-lg">
             About
           </a>
-          <a href="pages/blog.html" className="block py-2 px-4 text-sm text-slate-600 hover:bg-slate-100">
+          <a href="/blogs" className="block py-2 px-4 text-sm text-slate-600 hover:bg-slate-100">
             Blog
           </a>
-          <a href="pages/paper_implementations.html" className="block py-2 px-4 text-sm text-slate-600 hover:bg-slate-100">
+          <a href="/paper_implementations" className="block py-2 px-4 text-sm text-slate-600 hover:bg-slate-100">
             Paper Implementations
           </a>
-          <a href="pages/projects.html" className="block py-2 px-4 text-sm text-slate-600 hover:bg-slate-100 rounded-b-lg">
+          <a href="/projects" className="block py-2 px-4 text-sm text-slate-600 hover:bg-slate-100 rounded-b-lg">
             Projects
           </a>
         </div>
