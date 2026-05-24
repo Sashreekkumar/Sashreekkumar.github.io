@@ -50,7 +50,7 @@ export default function About() {
               </svg>
             </a>
             <a
-              href="https://linkedin.com/in/sashreek-kumar"
+              href="https://substack.com/@sashreekkumar"
               target="_blank"
               rel="noreferrer"
               className="hover:text-[#FF6719]"

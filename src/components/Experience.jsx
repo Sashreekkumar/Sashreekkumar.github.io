@@ -15,7 +15,7 @@ export default function Experience() {
           </p>
 
           <p className="mt-2">
-            End-to-end YOLO-based pipeline for polyp detection, segmentation, dataset conversion, training, inference, and evaluation.
+            Developed an end-to-end YOLO-based pipeline for polyp detection and segmentation in colonoscopy videos, including dataset conversion, model training, video-level inference and evaluation.
           </p>
         </div>
 
