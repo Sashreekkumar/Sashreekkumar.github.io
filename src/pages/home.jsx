@@ -1,10 +1,14 @@
+import { useIsMobile } from "../utils/isMobile";
+import DesktopLayout from "../layouts/desktop_layout";
+import MobileLayout from "../layouts/mobile_layout";
 import MainLayout from "../layouts/main_layout";
-import Layout from "../layouts/home_layout";
 
+// home.jsx
 export default function Home() {
   return (
     <MainLayout>
-      <Layout />
+      <DesktopLayout />  {/* visible only lg+ */}
+      <MobileLayout />   {/* visible only below lg */}
     </MainLayout>
   );
 }
