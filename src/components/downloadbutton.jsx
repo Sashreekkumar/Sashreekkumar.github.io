@@ -1,15 +1,26 @@
 export default function DownloadResume() {
   return (
-    <div className="mt-3 mb-12 ml-5">
+    <div className="mt-4 mb-12 ml-5">
       <a
-        href="https://drive.google.com/file/d/17BRQr1Z4NAVs_Zw9G3toJHe8me8Qmz70/view?usp=drive_link"
+        href="https://drive.google.com/uc?export=download&id=17BRQr1Z4NAVs_Zw9G3toJHe8me8Qmz70"
         target="_blank"
         rel="noopener noreferrer"
-        download="Sashreek_Kumar_Resume.pdf"
-        className="inline-flex items-center text-sm border border-gray-300 px-4 py-2 rounded hover:border-[#387ed1] hover:text-[#387ed1] transition duration-200 translate-x-4"
+        className="
+          inline-flex items-center gap-2
+          px-5 py-3
+          rounded-lg
+          bg-blue-600
+          text-white
+          text-sm font-medium
+          border border-blue-600
+          transition-all duration-200
+          hover:bg-blue-700
+          hover:border-blue-700
+          hover:translate-y-[-1px]
+        "
       >
         <svg
-          className="w-4 h-4 mr-2"
+          className="w-4 h-4"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -22,7 +33,7 @@ export default function DownloadResume() {
           />
         </svg>
 
-        Download Resume
+        <span>Download Resume</span>
       </a>
     </div>
   );
